@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebService } from './web.service';
 
 @Component ({
     selector: 'tareas',
@@ -9,14 +10,23 @@ import { Component } from '@angular/core';
             <p>
                  {{tarea.trabajo}}
             </p>
-        </mat-card-content>
+        </mat-card-content>                
     </mat-card>
     `
 })
 
 export class TareasComponent {
 
-    tareas = [{trabajo: 'primera tarea', usuario: 'David'},
-              {trabajo: 'segunda tarea', usuario: 'Rafa'}
-    ];
+    tareas: any;
+
+    constructor (private webservice: WebService){}
+
+    
+     async ngOnInit(){
+        let respuesta = await this.webservice.getTask();
+        this.tareas = respuesta;
+    }
+
+   
+
 }
