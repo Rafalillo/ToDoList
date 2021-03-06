@@ -7,12 +7,21 @@ import { HttpClient } from '@angular/common/http'
 export class WebService {
 
   APIURL = "http://localhost:7070/api";
-  constructor(private http: HttpClient){}
 
-  getTask(){
-    return this.http.get(this.APIURL + '/tareas').toPromise();
+  tareas: any;
+  respuesta: any;
+
+  constructor(private http: HttpClient) {
+    this.tareas = [];
+    this.getTask();
   }
-  postTask(tarea){
-    return this.http.post(this.APIURL + '/tarea', tarea).toPromise();
+
+  async getTask() {
+    this.respuesta = await this.http.get(this.APIURL + '/tareas').toPromise();
+    this.tareas = this.respuesta;
+  }
+  async postTask(tarea) {
+    this.respuesta = await this.http.post(this.APIURL + '/tarea', tarea).toPromise();
+    this.tareas.push(this.respuesta);
   }
 }
