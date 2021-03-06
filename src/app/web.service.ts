@@ -5,9 +5,14 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class WebService {
+
+  APIURL = "http://localhost:7070/api";
   constructor(private http: HttpClient){}
 
   getTask(){
-    return this.http.get('http://localhost:1234/tareas').toPromise();
+    return this.http.get(this.APIURL + '/tareas').toPromise();
+  }
+  postTask(tarea){
+    return this.http.post(this.APIURL + '/tarea', tarea).toPromise();
   }
 }

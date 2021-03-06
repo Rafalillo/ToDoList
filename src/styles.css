@@ -2,3 +2,20 @@
 
 html, body { height: 100%; background-color: rgb(214, 213, 213); }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-card {
+    margin: 8px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .mat-fab .mat-button-wrapper {
+    padding: 16px 0;
+    display: inline-block;
+    line-height: 24px;
+}
