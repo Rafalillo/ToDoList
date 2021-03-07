@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TareasComponent } from './tareas.component';
+import { RegisterComponent } from './register.component';
 import { NavComponent } from './nav.component';
 import { HomeComponent } from './home.component';
 import { NuevaTareaComponent } from './nueva-tarea.component';
@@ -16,11 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
 import { MatMenuModule } from '@angular/material/menu';
-
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WebService } from './web.service';
 
 @NgModule({
@@ -29,6 +27,7 @@ import { WebService } from './web.service';
     TareasComponent,
     NavComponent,
     HomeComponent,
+    RegisterComponent,
     NuevaTareaComponent
   ],
   imports: [
@@ -38,6 +37,7 @@ import { WebService } from './web.service';
     MatFormFieldModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule,

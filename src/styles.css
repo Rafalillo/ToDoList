@@ -19,3 +19,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: inline-block;
     line-height: 24px;
 }
+.example-container{
+  background: white;
+  margin: 10px;
+}
+
